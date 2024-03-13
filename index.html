@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>선물 거래 봇 설정</title>
+    <link rel="stylesheet" href="style.css"> <!-- 스타일시트 링크 -->
+    <script src="script.js"></script> <!-- 자바스크립트 파일 링크 -->
+</head>
+<body>
+    <h1>선물 거래 봇 설정</h1>
+
+    <form id="botSettingsForm">
+        <div class="form-group">
+            <label for="entryPrice">초기 진입 가격:</label>
+            <select id="entryPrice" name="entryPrice">
+                <option value="market">시장 가격</option>
+                <option value="limit">지정 가격</option>
+            </select>
+        </div>
+        
+        <div class="form-group" id="limitPriceInput" style="display:none;">
+            <label for="limitPrice">지정 가격:</label>
+            <input type="number" id="limitPrice" name="limitPrice" min="0">
+        </div>
+        
+        <div class="form-group">
+            <label for="numEntries">추가 진입 횟수:</label>
+            <input type="number" id="numEntries" name="numEntries" min="2" max="20">
+        </div>
+        
+        <div class="form-group">
+            <label for="multiplier">추가 구매 배수:</label>
+            <input type="number" id="multiplier" name="multiplier" step="0.1" min="1">
+        </div>
+        
+        <div class="form-group">
+            <label for="entryInterval">추가 진입 간격 (%):</label>
+            <input type="number" id="entryInterval" name="entryInterval" step="0.1" min="0">
+        </div>
+        
+        <div class="form-group">
+            <label for="profitTarget">이익 실현 (%):</label>
+            <input type="number" id="profitTarget" name="profitTarget" step="0.1" min="0">
+        </div>
+        
+        <div class="form-group">
+            <label for="availableMargin">사용 가능 마진:</label>
+            <span id="availableMargin"></span> <!-- API 데이터로 채워질 부분 -->
+        </div>
+        
+        <div class="form-group">
+            <label for="minMargin">최소 투자 마진:</label>
+            <input type="number" id="minMargin" name="minMargin" min="0">
+        </div>
+        
+        <div class="form-group">
+            <label for="repeatExecution">반복 실행:</label>
+            <select id="repeatExecution" name="repeatExecution">
+                <option value="none">없음</option>
+                <option value="market">시장 가격</option>
+                <option value="percentage">지정 비율</option>
+            </select>
+        </div>
+        
+        <div class="form-group" id="specifiedRatioInput" style="display:none;">
+            <label for="specifiedRatio">지정 비율 (%):</label>
+            <input type="number" id="specifiedRatio" name="specifiedRatio" step="0.1" min="0">
+        </div>
+
+        <div class="form-group">
+            <label for="stopLoss">손절매 설정 (%):</label>
+            <input type="number" id="stopLoss" name="stopLoss" step="0.1" min="0">
+        </div>
+        
+        <button type="submit">봇 시작</button>
+    </form>
+
+    <script>
+        // 여기서 폼 변경사항과 제출에 대한 자바스크립트를 작성합니다.
+    </script>
+</body>
+</html>
